@@ -1,13 +1,15 @@
-﻿#include<iostream>
-#include<string>
+﻿#include <iostream>
+#include <string>
 using namespace std;
 const int size = 4;
-struct date {
+struct date
+{
 	int day;
 	int month;
 	int year;
 };
-struct student {
+struct student
+{
 	int ID;
 	string name;
 	double gpa;
@@ -15,15 +17,18 @@ struct student {
 	bool ap;
 	char grade[4];
 };
-void read(student  student[]) {
-	student[0] = { 998542, "Ahmad", 3.8, {19, 5, 2002}, 0, {'A', 'C', 'F', 'D'} };
-	student[1] = { 986521, "Sara", 3.5, {20, 6, 2002}, 0, {'F', 'B', 'A', 'C'} };
-	student[2] = { 995271, "Rami", 2.8, {18, 1, 2003}, 1, {'C', 'F', 'F', 'A'} };
-	student[3] = { 987741, "Rania", 4.0, {13, 8, 2003}, 0, {'A', 'A', 'A', 'A'} };
+void read(student student[])
+{
+	student[0] = {998542, "Ahmad", 3.8, {19, 5, 2002}, 0, {'A', 'C', 'F', 'D'}};
+	student[1] = {986521, "Sara", 3.5, {20, 6, 2002}, 0, {'F', 'B', 'A', 'C'}};
+	student[2] = {995271, "Rami", 2.8, {18, 1, 2003}, 1, {'C', 'F', 'F', 'A'}};
+	student[3] = {987741, "Rania", 4.0, {13, 8, 2003}, 0, {'A', 'A', 'A', 'A'}};
 }
-void print(student students[], int size) {
+void print(student students[], int size)
+{
 	cout << "Names of students:" << endl;
-	for (int i = 0; i < size; ++i) {
+	for (int i = 0; i < size; ++i)
+	{
 		cout << students[i].name << endl;
 	}
 }
@@ -51,20 +56,25 @@ void Fs(student student[])
 		c = 0;
 	}
 }
-void DOBlarger(student student[], int size) {
+void DOBlarger(student student[], int size)
+{
 	cout << "Students who have DOB larger than 2002:" << endl;
-	for (int i = 0; i < size; ++i) {
-		if (student[i].DOB.year > 2002) {
+	for (int i = 0; i < size; ++i)
+	{
+		if (student[i].DOB.year > 2002)
+		{
 			cout << student[i].name << endl;
 		}
 	}
 }
-int main() {
+int main()
+{
 	const int size = 4;
 	int i = 0;
 	student student[size];
 	int choice;
-	do {
+	do
+	{
 		system("cls");
 		cout << "1. Read:\n ";
 		cout << "2. Print students names:\n ";
@@ -73,7 +83,8 @@ int main() {
 		cout << "5. Exit:\n ";
 		cout << "Enter option: ";
 		cin >> choice;
-		switch (choice) {
+		switch (choice)
+		{
 		case 1:
 			read(student);
 			break;
@@ -84,12 +95,14 @@ int main() {
 		case 3:
 			Fs(student);
 			break;
-		case 4:DOBlarger(student, size);
+		case 4:
+			DOBlarger(student, size);
 			break;
 		case 5:
 			cout << "Exiting" << endl;
 			break;
-		default: cout << "Invalid option\n";
+		default:
+			cout << "Invalid option\n";
 			break;
 		}
 		system("PAUSE");
